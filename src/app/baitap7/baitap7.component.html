@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="card ">
+        <div class="card-header bg-dark">
+            <h4 class="text-white">Quản lý danh mục sản phẩm</h4>
+        </div>
+        <div class="card-body row">
+            <div class="col-3">
+                <input placeholder="MaSP" class="form-control" #maSP>
+            </div>
+            <div class="col-3">
+                <input placeholder="TenSP" class="form-control" #tenSP >
+            </div>
+            <div class="col-3">
+                <input placeholder="Gia" class="form-control" #gia >
+            </div>
+            <div class="col-3">
+                <button (click) = "handleThemSanPham(maSP.value, tenSP.value, gia.value)" class="btn btn-success">Thêm sản phẩm</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-header bg-dark" >
+            <h4 class="text-white" >Danh mục sản phẩm</h4>
+        </div>
+        <div class="card-body">
+            <table class="table" >
+                <thead>
+                    <tr>
+                        <th>Mã SP</th>
+                        <th>Tên SP</th>
+                        <th>Giá</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let sp of mangSanPham | paginate: {itemsPerPage: 3, currentPage: p } ">
+                        <td>{{sp.MaSP}}</td>
+                        <td>{{sp.TenSP}}</td>
+                        <td>{{sp.Gia}}</td>
+                        <td>
+                            <button (click) = "handleXoaSanPham(sp.MaSP)" class="btn btn-danger" >Xóa</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+
+</div>

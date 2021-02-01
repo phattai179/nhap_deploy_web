@@ -1,0 +1,42 @@
+<h3 class="text-center">Sign In</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <form [formGroup]="formDangNhap" (ngSubmit)="handleDangNhap()">
+                <!-- Tài khoản -->
+                <div class="form-group">
+                    <label>Tài Khoản</label>
+                    <input type="text" class="form-control" formControlName="taiKhoan">
+
+                    <app-error-massage [control]="formDangNhap.get('taiKhoan')" name="taiKhoan" ></app-error-massage>
+
+                    <!-- Validation -->
+                    <!-- <div *ngIf="formDangNhap.get('taiKhoan')?.invalid && (formDangNhap.get('taiKhoan')?.touched || formDangNhap.get('taiKhoan')?.dirty)" class="alert alert-danger" >
+                        <span *ngIf="formDangNhap.get('taiKhoan')?.errors?.required">
+                            Tài khoản không được bỏ trống
+                        </span>
+                        <span *ngIf="formDangNhap.get('taiKhoan')?.errors?.minlength || formDangNhap.get('taiKhoan')?.errors?.maxlength">
+                            Tài khoảng phải từ 5 đến 15 ký tự
+                        </span>
+                    </div> -->
+                </div>
+                <!-- Mật khẩu -->
+                <div class="form-group">
+                    <label>Mật khẩu</label>
+                    <input type="text" class="form-control" formControlName="matKhau">
+
+                    <app-error-massage [control]="formDangNhap.get('matKhau')" ></app-error-massage>
+
+                    <!-- <div *ngIf="formDangNhap.get('matKhau')?.invalid && (formDangNhap.get('matKhau')?.touched || formDangNhap.get('matKhau')?.dirty)" class="alert alert-danger" >
+                        <span *ngIf="formDangNhap.get('matKhau')?.errors?.required">
+                            Mật khẩu không được bỏ trống
+                        </span>
+                    </div> -->
+                </div>
+                <!-- Submit -->
+                <button class="btn btn-success" >Sign In</button>
+            </form>
+
+        </div>
+    </div>
+</div>

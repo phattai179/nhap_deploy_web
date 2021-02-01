@@ -1,0 +1,9 @@
+<div class="container" >
+    <h3 class="text-center">Danh Sách Phim</h3>
+    <app-add-movie (onAdd) = "handleAddMovie($event)" ></app-add-movie>
+    <!-- C1 -->
+    <!-- <app-movie-list [newMovie] = "newMovie" ></app-movie-list> -->
+    <!-- C2 -->
+    <app-movie-list #movieList ></app-movie-list>
+
+</div>

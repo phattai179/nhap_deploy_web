@@ -1,0 +1,12 @@
+<h3 class="text-center" >Danh Sách Ghế</h3>
+
+<div class="container" >
+    <div class="row" >
+        <div class="col-6" >
+            <app-danh-sach-ghe #dsGhe (onSelect) = "chonGhe($event)" ></app-danh-sach-ghe>
+        </div>
+        <div class="col-6" >
+            <app-danh-sach-ghe-da-dat (onRemove) = "huyGhe($event)" #dsGheDaDat></app-danh-sach-ghe-da-dat>
+        </div>
+    </div>
+</div>

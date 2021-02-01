@@ -1,0 +1,52 @@
+<!-- ngIf -->
+<!-- <div *ngIf = "!status; else noiDungThayThe" >
+    Cybersoft
+</div>
+<ng-template #noiDungThayThe>
+    <h1>Cybersoft đã ẩn</h1>
+</ng-template>
+<button class="btn btn-success" (click) = "Hide()">Hide</button>
+<button class="btn btn-success" (click) = "Show()" >Show</button> -->
+
+<select name="" id="" #danhSachThang (change)="chonThang(danhSachThang.value)">
+    <!-- <option value="1" >Tháng 1</option>
+    <option value="2" >Tháng 2</option>
+    <option value="3" >Tháng 3</option>
+    <option value="4" >Tháng 4</option> -->
+    <option value="0">Chọn Tháng</option>
+    <option *ngFor="let month of monthArray; let n = index" [value]="n + 1">
+        {{month}}
+    </option>
+
+</select>
+
+<div [ngSwitch]="month">
+    <p *ngSwitchCase="1">Tháng 1 có 31 ngày</p>
+    <p *ngSwitchCase="2">Tháng 2 có 28 ngày</p>
+    <p *ngSwitchCase="3">Tháng 3 có 31 ngày</p>
+    <p *ngSwitchCase="4">Tháng 4 có 30 ngày</p>
+</div>
+
+<br>
+<br>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tên</th>
+            <th>Tuổi</th>
+            <th>Điểm trung bình</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of studentArray">
+            <td>{{student.Ten}}</td>
+            <td>{{student.Tuoi}}</td>
+            <td>{{student.DiemTB}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div [ngClass] = "{hightlight: status}" >
+    Cybersoft
+</div>

@@ -1,0 +1,31 @@
+<div class="container" >
+        <!-- Xử lý loading -->
+        <div *ngIf="loading" class="loading" >
+
+        </div>
+
+        <!-- Xử lý error -->
+        <div *ngIf="error" >
+            {{error}}
+        </div>
+    <div class="row" >
+        <div *ngFor="let movie of movieList | slice: 15: 24 " class="col-4" >
+            <div class="card">
+                <img class="card-img-top" [src]="movie.hinhAnh" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">{{movie.tenPhim | uppercase}}</h4>
+                    <!-- <h4 class="card-title">{{movie.tenPhim | lowercase}}</h4> -->
+                    <!-- <p class="card-text">{{0.5 | percent}}</p> -->
+                    <!-- <p class="card-text">{{1000 | currency: "JPY"}}</p> -->
+                    <!-- <P class="card-text">{{movie | json}}</P> -->
+                    <p class="card-text">{{movie.ngayKhoiChieu | date: "dd/MM/yyyy hh:mm:ss"}}</p>
+                    <p class="card-text">{{movie.moTa | shortcut : 50}}</p>
+                    <button 
+                    routerLink="/movie/{{movie.maPhim}}"
+                    mat-raised-button color="primary"
+                    >Xem Chi Tiết</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

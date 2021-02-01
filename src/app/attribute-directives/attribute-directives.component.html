@@ -1,0 +1,29 @@
+
+<!-- ngClass -->
+<p class="text-center" [ngClass] = "{'bg-primary': isActive, 'bg-secondary' : !isActive}" >
+    Hello Angular
+</p>
+
+<button (click) = "isActive = !isActive" >Toggle</button>
+
+<!-- ngStyle -->
+<p style="text-align: center;" [style] = "{'background-color' : color}" >
+    DemoStyle
+</p>
+
+<div
+style= "height: 700px; width: 100%; background-repeat: no-repeat; background-size: cover;" 
+[style] = "{'background-image' : 'url(' + imageUrl +')'}"
+>
+</div>
+
+
+<!-- ngNonBindable -->
+<p ngNonBindable >
+    {{color}}
+</p>
+
+<!-- Xử lý in chuỗi HTML ra giao diện nếu gặp TH API trả về là chuỗi HTML-->
+
+<p [innerHTML] = 'result'>
+</p>
